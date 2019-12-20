@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    container_name: userprofileapp
+    restart: always
+    build: .
+    ports: [ '3500:3500' ]
+    links: [ mongo ]
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports: [ '27017:27017' ]
